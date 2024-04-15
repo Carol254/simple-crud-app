@@ -1,13 +1,7 @@
-table{
-    border: 1px solid black;
+img{
+    cursor: pointer;
 }
-td,th{
-    border: 1px solid black;
-
-}
-.main{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    /* height: 100vh; */
+.banner{
+    background-color:#435d7d ;
+    width: 100%;
 }
