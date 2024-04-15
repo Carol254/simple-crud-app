@@ -13,7 +13,7 @@
         <?php
             $servername = "localhost";
             $username = "root";
-            $password = "carolkui";
+            $password = "";
             $dbname = "myCustomers";
 
             $conn = new mysqli($servername, $username, $password ,$dbname);
@@ -45,22 +45,54 @@
             $results = $conn->query($sql);
 
             if($results->num_rows > 0){
-                echo "<table><tr><th>ID</th><th>Firstname</th><th>LastName</th><th>Email</th><th>Age</th><th>Gender</th></tr>";
+                echo "<table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Firstname</th>
+                            <th>LastName</th>
+                            <th>Email</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>";
 
                 while($row = $results->fetch_assoc()){
-                    echo "<tr><td>".$row["id"] ."</td><td>".$row["firstname"] ."</td><td>".$row["lastname"] ."</td><td>".$row["email"] ."</td><td>".$row["age"] ."</td><td>".$row["gender"] ."</td></tr>";
+                    echo 
+                    "<tr>
+                        <td>".$row["id"] ."</td>
+                        <td>".$row["firstname"] ."</td>
+                        <td>".$row["lastname"] ."</td>
+                        <td>".$row["email"] ."</td>
+                        <td>".$row["age"] ."</td>
+                        <td>".$row["gender"] ."</td>
+                        <td onclick='onEdit(".$row["id"].")'><img src='assets/edit.svg'></td>
+                        <td onclick='onDelete(".$row["id"].")'><img  src='assets/trash.svg'></td>
+                    </tr>";
                 }
                 echo "</table>";
             }else{
                 echo "0 results";
             }
 
-
-
-        
             $conn->close();
         ?>
     </div>
     
+    <script>
+        function onDelete(id){
+            console.log ('deleted', id);
+            // window.alert('Customer '+ id + ' deleted successfully');
+
+            window.location.href = 'delete.php?id=' + id;
+        }
+
+        function onEdit(id){
+            console.log ('edited', id);
+            // window.alert('Customer '+ id + ' edited successfully');
+
+            window.location.href = 'edit.php?id=' + id;
+        }
+    </script>
 </body>
 </html>
