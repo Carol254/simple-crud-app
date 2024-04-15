@@ -28,10 +28,14 @@
         echo $row["age"].'<br>';
         echo $row["gender"].'<br>';
         
-        // echo 
-        // "<form>
-        //     <input type='text' name='fname' value='.$row["firstname"].'>;
-        // </form>";
+        echo 
+        "<form>
+            <input type='text' name='fname' value='" . $row["firstname"] . "'>
+            <input type='text' name='lname' value='" . $row["lastname"] . "'>
+            <input type='text' name='email' value='" . $row["email"] . "'>
+            <input type='text' name='age' value='" . $row["age"] . "'>
+            <input type='text' name='gender' value='" . $row["gender"] . "'>
+        </form>";
                
         
     }else{
