@@ -1,7 +1,7 @@
 <?php
         $servername = "localhost";
         $username = "root";
-      $password = "";
+         $password = "";
         $dbname = "myCustomers";
      
         $customer_id = $_POST['c_id'];
@@ -17,7 +17,7 @@
             die("Connection failed: " . $conn->connect_error);
         } 
 
-        // sql to delete a record
+        // sql to update a record
         
         $sql = "UPDATE customerDetails SET email = '".$customer_email."', firstname='".$customer_fname."', lastname='".$customer_lname."', age='".$customer_age."' , gender='".$customer_gender."' WHERE id='".$customer_id."' ";
         
