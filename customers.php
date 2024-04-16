@@ -8,16 +8,16 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div class="banner d-flex justify-content-evenly">
+    <div class="">
+        <div class="banner d-flex justify-content-evenly align-items-center">
             <h3 class="my-2 text-white">CUSTOMER DATA</h3>
-            <a class="btn btn-success my-2" href="add.php">CREATE CUSTOMER</a>
+            <div class="d-flex"><a class="btn btn-success mt-1" href="add.php"><span><img src="assets/add.svg" ></span>CREATE CUSTOMER</a></div>
         </div>
         <div class="d-flex justify-content-center">
             <?php
                 $servername = "localhost";
                 $username = "root";
-                 $password = "";
+              $password = "";
                 $dbname = "myCustomers";
 
                 $conn = new mysqli($servername, $username, $password ,$dbname);

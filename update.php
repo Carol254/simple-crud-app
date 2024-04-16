@@ -1,7 +1,7 @@
 <?php
         $servername = "localhost";
         $username = "root";
-         $password = "";
+      $password = "";
         $dbname = "myCustomers";
      
         $customer_id = $_POST['c_id'];
